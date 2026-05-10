@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+giữ nguyên tất cả nọi dung gốc,bạn chỉnh lại,thành 1 file duy nhất  <!DOCTYPE html>
 <html lang="vi">
 <head>
 <meta charset="UTF-8" />
@@ -105,6 +105,7 @@ body{
   font-size:14px;
   margin-bottom:10px;
   line-height:1.7;
+  color:#1e1e1e;
 }
 
 .en{
@@ -133,51 +134,74 @@ body{
     0 6px 14px rgba(0,0,0,0.15);
   transition:0.2s ease;
   position:relative;
-  text-decoration:none;
+}
+
+.btn::before{
+  content:"";
+  position:absolute;
+  top:4px;
+  left:10%;
+  width:80%;
+  height:40%;
+  border-radius:999px;
+  background:linear-gradient(
+    to bottom,
+    rgba(255,255,255,0.7),
+    transparent
+  );
+}
+
+.btn:hover{
+  transform:translateY(-2px) scale(1.03);
+}
+
+.btn:active{
+  transform:translateY(1px) scale(0.98);
+}
+
+.support{
+  font-size:11px;
+  color:var(--muted);
+  margin-top:14px;
 }
 
 /* =========================
-   🔳 QR
+   🔳 QR LỚN HƠN
    ========================= */
 .qr{
   width:96px;
   height:96px;
   background:#e0e0e0;
   margin-top:10px;
+  opacity:0.9;
   border-radius:12px;
   border:1px solid #d8d8d8;
-  overflow:hidden;
 }
 
+/* nếu dùng ảnh QR thật */
 .qr img{
   width:100%;
   height:100%;
   object-fit:cover;
+  border-radius:12px;
 }
 
-/* =========================
-   ❓ HELP BUTTON FIX
-   ========================= */
 .help-btn{
   position:absolute;
   top:12px;
   right:12px;
-  width:22px;
-  height:22px;
+  width:20px;
+  height:20px;
   border-radius:50%;
   border:1px solid #cfd8cf;
   background:#f7fbf7;
   color:#2e7d32;
   font-size:12px;
-  font-weight:bold;
-
-  display:flex;
-  align-items:center;
-  justify-content:center;
-
+  text-align:center;
+  line-height:18px;
   cursor:pointer;
-  opacity:0.85;
-  z-index:10;
+  opacity:0.7;
+  transition:0.2s;
 }
 
 .help-btn:hover{
@@ -189,11 +213,19 @@ body{
    📱 RESPONSIVE
    ========================= */
 @media(max-width:1300px){
-  .grid{grid-template-columns:repeat(2,1fr);}
+  .grid{
+    grid-template-columns:repeat(2,1fr);
+  }
 }
 
 @media(max-width:760px){
-  .grid{grid-template-columns:1fr;}
+  .grid{
+    grid-template-columns:1fr;
+  }
+
+  .container{
+    padding:28px 16px;
+  }
 }
 </style>
 </head>
@@ -203,55 +235,170 @@ body{
 <div class="container">
 
   <div class="hero">
+
     <div class="brand">GREEN</div>
-    <div class="sub">GREEN được thiết kế để mang lại trải nghiệm đơn giản và thuận tiện.</div>
+
+    <div class="sub">
+      GREEN được thiết kế để mang lại trải nghiệm đơn giản và thuận tiện cho người dùng.<br>
+      <span style="color:#666;font-size:12px;">
+        GREEN is designed to provide a simple and convenient user experience.
+      </span>
+    </div>
+
     <div class="free">FREE TO USE</div>
+
+    <div class="sub" style="margin-top:10px;">
+      Đóng góp là một lựa chọn cá nhân, mang tính hào phóng tự nguyện,
+      như một cách ghi nhận giá trị bạn nhận được.<br>
+
+      <span style="color:#666;font-size:12px;">
+        Contribution is optional, a voluntary act of generosity,
+        as a way to acknowledge the value you receive.
+      </span>
+    </div>
+
+    <div class="sub" style="margin-top:18px;">
+      Bộ tiện ích cho Windows<br>
+
+      <span style="color:#666;font-size:12px;">
+        Windows utility suite
+      </span>
+    </div>
+
   </div>
 
   <div class="grid">
 
-    <!-- GREEN CLEANER -->
+    <!-- GreenCleaner -->
     <div class="card">
+
       <div class="help-btn">?</div>
+
       <div class="icon">🧹</div>
+
       <div class="title">GreenCleaner</div>
-      <div class="vi">• Dọn file tạm<br>• Giải phóng dung lượng<br>• Tối ưu máy</div>
-      <div class="en">• Clean temp files<br>• Free disk space<br>• Optimize system</div>
-      <a class="btn" href="https://github.com/hieunguyen1976109-bit/green-app/releases/download/v1.0.0/GreenCleaner.exe" target="_blank">Download</a>
-      <div class="qr"><img src="qr-green.png"></div>
+
+      <div class="vi">
+        • Dọn file tạm và cache hệ thống<br>
+        • Giải phóng dung lượng ổ đĩa<br>
+        • Tối ưu hiệu suất máy tính
+      </div>
+
+      <div class="en">
+        • Remove temporary files and cache<br>
+        • Free up disk space<br>
+        • Improve system performance
+      </div>
+
+      <a class="btn" href="https://github.com/hieunguyen1976109-bit/green-app/releases/download/v1.0.0/GreenCleaner.exe">Download</a>
+
+      <div class="support">
+        Hỗ trợ GREEN<br>
+        <span style="color:#666;">Bank transfer support</span>
+        <div class="qr">
+          <img src="qr-green.png">
+        </div>
+      </div>
+
     </div>
 
-    <!-- NOTE REMINDER R -->
+    <!-- NoteReminder(R) -->
     <div class="card">
+
       <div class="help-btn">?</div>
-      <div class="icon">🔔</div>
+
+      <div class="icon">🔔 + 📝</div>
+
       <div class="title">NoteReminder(R)</div>
-      <div class="vi">• Nhắc việc có âm thanh<br>• Nhiều mốc giờ</div>
-      <div class="en">• Sound reminders<br>• Multiple schedules</div>
-      <a class="btn" href="https://github.com/hieunguyen1976109-bit/green-app/releases/download/v1.0.0/Note.Reminder.exe" target="_blank">Download</a>
-      <div class="qr"><img src="qr-green.png"></div>
+
+      <div class="vi">
+        • Ghi chú và nhắc việc theo thời gian có âm thanh<br>
+        • Thiết lập nhiều mốc nhắc theo giờ (HH:MM)<br>
+        • Hiển thị bong bóng khi đến thời điểm
+      </div>
+
+      <div class="en">
+        • Notes with sound-based reminders<br>
+        • Multiple scheduled times (HH:MM)<br>
+        • Bubble notification on trigger
+      </div>
+
+      <a class="btn" href="https://github.com/hieunguyen1976109-bit/green-app/releases/download/v1.0.0/Note.Reminder.exe">Download</a>
+
+      <div class="support">
+        Hỗ trợ GREEN<br>
+        <span style="color:#666;">Bank transfer support</span>
+        <div class="qr">
+          <img src="qr-green.png">
+        </div>
+      </div>
+
     </div>
 
-    <!-- NOTE REMINDER -->
+    <!-- Note Reminder -->
     <div class="card">
+
       <div class="help-btn">?</div>
+
       <div class="icon">📝</div>
+
       <div class="title">Note Reminder</div>
-      <div class="vi">• Nhắc đơn giản<br>• Không âm thanh</div>
-      <div class="en">• Simple reminder</div>
-      <a class="btn" href="https://github.com/hieunguyen1976109-bit/green-app/releases/download/v1.0.0/NoteReminder.R.exe" target="_blank">Download</a>
-      <div class="qr"><img src="qr-green.png"></div>
+
+      <div class="vi">
+        • Ghi chú và nhắc việc đơn giản không âm thanh<br>
+        • Lưu nhắc việc theo thời gian cơ bản<br>
+        • Hiển thị bong bóng trực quan
+      </div>
+
+      <div class="en">
+        • Simple reminders without sound<br>
+        • Basic time scheduling<br>
+        • Visual bubble notifications
+      </div>
+
+      <a class="btn" href="https://github.com/hieunguyen1976109-bit/green-app/releases/download/v1.0.0/NoteReminder.R.exe">Download</a>
+
+      <div class="support">
+        Hỗ trợ GREEN<br>
+        <span style="color:#666;">Bank transfer support</span>
+        <div class="qr">
+          <img src="qr-green.png">
+        </div>
+      </div>
+
     </div>
 
-    <!-- WINCLOCK -->
+    <!-- WinCLOCK -->
     <div class="card">
+
       <div class="help-btn">?</div>
+
       <div class="icon">🕒</div>
+
       <div class="title">WinCLOCK</div>
-      <div class="vi">• Đồng hồ desktop<br>• Trong suốt</div>
-      <div class="en">• Desktop clock</div>
-      <a class="btn" href="https://github.com/hieunguyen1976109-bit/green-app/releases/download/v1.0.0/WinCLOCK.exe" target="_blank">Download</a>
-      <div class="qr"><img src="qr-green.png"></div>
+
+      <div class="vi">
+        • Đồng hồ mini cho Windows với giao diện hiện đại<br>
+        • Hiển thị giờ, phút, giây và lịch theo thời gian thực<br>
+        • Hỗ trợ nền trong suốt và hiển thị nổi trên desktop
+      </div>
+
+      <div class="en">
+        • Modern mini clock for Windows<br>
+        • Real-time clock and calendar display<br>
+        • Transparent background with desktop overlay support
+      </div>
+
+      <a class="btn" href="https://github.com/hieunguyen1976109-bit/green-app/releases/download/v1.0.0/WinCLOCK.exe">Download</a>
+
+      <div class="support">
+        Hỗ trợ GREEN<br>
+        <span style="color:#666;">Bank transfer support</span>
+        <div class="qr">
+          <img src="qr-green.png">
+        </div>
+      </div>
+
     </div>
 
   </div>
