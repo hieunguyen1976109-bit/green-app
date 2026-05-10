@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="vi">
 <head>
 <meta charset="UTF-8" />
@@ -62,6 +62,9 @@ body{
   color:var(--green);
 }
 
+/* =========================
+   🌿 4 CARD NGANG
+   ========================= */
 .grid{
   display:grid;
   grid-template-columns:repeat(4, 1fr);
@@ -112,6 +115,9 @@ body{
   line-height:1.6;
 }
 
+/* =========================
+   💎 BUTTON 3D
+   ========================= */
 .btn{
   display:inline-block;
   padding:10px 22px;
@@ -130,6 +136,38 @@ body{
   position:relative;
 }
 
+.btn::before{
+  content:"";
+  position:absolute;
+  top:4px;
+  left:10%;
+  width:80%;
+  height:40%;
+  border-radius:999px;
+  background:linear-gradient(
+    to bottom,
+    rgba(255,255,255,0.7),
+    transparent
+  );
+}
+
+.btn:hover{
+  transform:translateY(-2px) scale(1.03);
+}
+
+.btn:active{
+  transform:translateY(1px) scale(0.98);
+}
+
+.support{
+  font-size:11px;
+  color:var(--muted);
+  margin-top:14px;
+}
+
+/* =========================
+   🔳 QR LỚN HƠN
+   ========================= */
 .qr{
   width:96px;
   height:96px;
@@ -147,7 +185,7 @@ body{
   border-radius:12px;
 }
 
-/* ===== FIX HELP BUTTON ===== */
+/* ===== HELP BUTTON (CHỈ SỬA LINK) ===== */
 .help-btn{
   position:absolute;
   top:12px;
@@ -165,6 +203,7 @@ body{
   opacity:0.7;
   transition:0.2s;
   text-decoration:none;
+  display:block;
 }
 
 .help-btn:hover{
@@ -172,12 +211,23 @@ body{
   border-color:var(--green);
 }
 
+/* =========================
+   📱 RESPONSIVE
+   ========================= */
 @media(max-width:1300px){
-  .grid{ grid-template-columns:repeat(2,1fr); }
+  .grid{
+    grid-template-columns:repeat(2,1fr);
+  }
 }
 
 @media(max-width:760px){
-  .grid{ grid-template-columns:1fr; }
+  .grid{
+    grid-template-columns:1fr;
+  }
+
+  .container{
+    padding:28px 16px;
+  }
 }
 </style>
 </head>
@@ -187,7 +237,9 @@ body{
 <div class="container">
 
   <div class="hero">
+
     <div class="brand">GREEN</div>
+
     <div class="sub">
       GREEN được thiết kế để mang lại trải nghiệm đơn giản và thuận tiện cho người dùng.<br>
       <span style="color:#666;font-size:12px;">
@@ -200,6 +252,7 @@ body{
     <div class="sub" style="margin-top:10px;">
       Đóng góp là một lựa chọn cá nhân, mang tính hào phóng tự nguyện,
       như một cách ghi nhận giá trị bạn nhận được.<br>
+
       <span style="color:#666;font-size:12px;">
         Contribution is optional, a voluntary act of generosity,
         as a way to acknowledge the value you receive.
@@ -208,19 +261,23 @@ body{
 
     <div class="sub" style="margin-top:18px;">
       Bộ tiện ích cho Windows<br>
+
       <span style="color:#666;font-size:12px;">
         Windows utility suite
       </span>
     </div>
+
   </div>
 
   <div class="grid">
 
-    <!-- GREEN CLEANER -->
+    <!-- GreenCleaner -->
     <div class="card">
-      <a class="help-btn" href="#help">?</a>
+
+      <a class="help-btn" href="hlp.pdf">?</a>
 
       <div class="icon">🧹</div>
+
       <div class="title">GreenCleaner</div>
 
       <div class="vi">
@@ -236,13 +293,24 @@ body{
       </div>
 
       <a class="btn" href="https://github.com/hieunguyen1976109-bit/green-app/releases/download/v1.0.0/GreenCleaner.exe">Download</a>
+
+      <div class="support">
+        Hỗ trợ GREEN<br>
+        <span style="color:#666;">Bank transfer support</span>
+        <div class="qr">
+          <img src="qr-green.png">
+        </div>
+      </div>
+
     </div>
 
-    <!-- NOTE REMINDER R -->
+    <!-- NoteReminder(R) -->
     <div class="card">
-      <a class="help-btn" href="#help">?</a>
+
+      <a class="help-btn" href="hlp.pdf">?</a>
 
       <div class="icon">🔔 + 📝</div>
+
       <div class="title">NoteReminder(R)</div>
 
       <div class="vi">
@@ -258,13 +326,24 @@ body{
       </div>
 
       <a class="btn" href="https://github.com/hieunguyen1976109-bit/green-app/releases/download/v1.0.0/Note.Reminder.exe">Download</a>
+
+      <div class="support">
+        Hỗ trợ GREEN<br>
+        <span style="color:#666;">Bank transfer support</span>
+        <div class="qr">
+          <img src="qr-green.png">
+        </div>
+      </div>
+
     </div>
 
-    <!-- NOTE REMINDER -->
+    <!-- Note Reminder -->
     <div class="card">
-      <a class="help-btn" href="#help">?</a>
+
+      <a class="help-btn" href="hlp.pdf">?</a>
 
       <div class="icon">📝</div>
+
       <div class="title">Note Reminder</div>
 
       <div class="vi">
@@ -280,13 +359,24 @@ body{
       </div>
 
       <a class="btn" href="https://github.com/hieunguyen1976109-bit/green-app/releases/download/v1.0.0/NoteReminder.R.exe">Download</a>
+
+      <div class="support">
+        Hỗ trợ GREEN<br>
+        <span style="color:#666;">Bank transfer support</span>
+        <div class="qr">
+          <img src="qr-green.png">
+        </div>
+      </div>
+
     </div>
 
-    <!-- WINCLOCK -->
+    <!-- WinCLOCK -->
     <div class="card">
-      <a class="help-btn" href="#help">?</a>
+
+      <a class="help-btn" href="hlp.pdf">?</a>
 
       <div class="icon">🕒</div>
+
       <div class="title">WinCLOCK</div>
 
       <div class="vi">
@@ -302,20 +392,17 @@ body{
       </div>
 
       <a class="btn" href="https://github.com/hieunguyen1976109-bit/green-app/releases/download/v1.0.0/WinCLOCK.exe">Download</a>
+
+      <div class="support">
+        Hỗ trợ GREEN<br>
+        <span style="color:#666;">Bank transfer support</span>
+        <div class="qr">
+          <img src="qr-green.png">
+        </div>
+      </div>
+
     </div>
 
-  </div>
-
-  <!-- ================= HELP SECTION ================= -->
-  <div id="help" style="margin-top:60px;padding:20px;background:#fff;border-radius:12px;border:1px solid #ddd;">
-    <h2>HELP / HƯỚNG DẪN</h2>
-
-    <p><b>GreenCleaner:</b> Dọn rác hệ thống và tăng tốc máy.</p>
-    <p><b>NoteReminder(R):</b> Nhắc việc có âm thanh và popup.</p>
-    <p><b>Note Reminder:</b> Ghi chú đơn giản không âm thanh.</p>
-    <p><b>WinCLOCK:</b> Đồng hồ desktop thời gian thực.</p>
-
-    <p>👉 Nhấn nút "?" ở từng ứng dụng để xem hướng dẫn nhanh.</p>
   </div>
 
 </div>
