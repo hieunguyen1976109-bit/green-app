@@ -1,4 +1,4 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="vi">
 <head>
 <meta charset="UTF-8" />
@@ -18,7 +18,9 @@
   --mint2:#7cf0b3;
 }
 
-*{ box-sizing:border-box; }
+*{
+  box-sizing:border-box;
+}
 
 body{
   margin:0;
@@ -83,13 +85,32 @@ body{
   box-shadow:0 12px 24px rgba(0,0,0,0.06);
 }
 
-.icon{ font-size:30px; margin-bottom:12px; color:var(--green); }
+.icon{
+  font-size:30px;
+  margin-bottom:12px;
+  color:var(--green);
+}
 
-.title{ font-size:18px; font-weight:600; margin-bottom:12px; }
+.title{
+  font-size:18px;
+  font-weight:600;
+  margin-bottom:12px;
+  color:#1b1b1b;
+}
 
-.vi{ font-size:14px; margin-bottom:10px; line-height:1.7; }
+.vi{
+  font-size:14px;
+  margin-bottom:10px;
+  line-height:1.7;
+  color:#1e1e1e;
+}
 
-.en{ font-size:12px; color:#555; margin-bottom:16px; line-height:1.6; }
+.en{
+  font-size:12px;
+  color:#555;
+  margin-bottom:16px;
+  line-height:1.6;
+}
 
 .btn{
   display:inline-block;
@@ -100,7 +121,13 @@ body{
   font-weight:bold;
   color:#0b3d25;
   border-radius:999px;
-  background:linear-gradient(145deg,#d9ffe6,#7cf0b3);
+  background:linear-gradient(145deg,var(--mint1),var(--mint2));
+  box-shadow:
+    inset 0 2px 3px rgba(255,255,255,0.9),
+    inset 0 -3px 6px rgba(0,0,0,0.15),
+    0 6px 14px rgba(0,0,0,0.15);
+  transition:0.2s ease;
+  position:relative;
 }
 
 .qr{
@@ -108,25 +135,35 @@ body{
   height:96px;
   background:#e0e0e0;
   margin-top:10px;
+  opacity:0.9;
+  border-radius:12px;
+  border:1px solid #d8d8d8;
+}
+
+.qr img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
   border-radius:12px;
 }
 
-/* FIX HELP BUTTON */
+/* ===== FIX HELP BUTTON ===== */
 .help-btn{
   position:absolute;
   top:12px;
   right:12px;
-  width:22px;
-  height:22px;
+  width:20px;
+  height:20px;
   border-radius:50%;
   border:1px solid #cfd8cf;
   background:#f7fbf7;
   color:#2e7d32;
-  font-size:13px;
+  font-size:12px;
   text-align:center;
-  line-height:20px;
+  line-height:18px;
   cursor:pointer;
-  opacity:0.8;
+  opacity:0.7;
+  transition:0.2s;
   text-decoration:none;
 }
 
@@ -151,56 +188,134 @@ body{
 
   <div class="hero">
     <div class="brand">GREEN</div>
+    <div class="sub">
+      GREEN được thiết kế để mang lại trải nghiệm đơn giản và thuận tiện cho người dùng.<br>
+      <span style="color:#666;font-size:12px;">
+        GREEN is designed to provide a simple and convenient user experience.
+      </span>
+    </div>
+
+    <div class="free">FREE TO USE</div>
+
+    <div class="sub" style="margin-top:10px;">
+      Đóng góp là một lựa chọn cá nhân, mang tính hào phóng tự nguyện,
+      như một cách ghi nhận giá trị bạn nhận được.<br>
+      <span style="color:#666;font-size:12px;">
+        Contribution is optional, a voluntary act of generosity,
+        as a way to acknowledge the value you receive.
+      </span>
+    </div>
+
+    <div class="sub" style="margin-top:18px;">
+      Bộ tiện ích cho Windows<br>
+      <span style="color:#666;font-size:12px;">
+        Windows utility suite
+      </span>
+    </div>
   </div>
 
   <div class="grid">
 
+    <!-- GREEN CLEANER -->
     <div class="card">
       <a class="help-btn" href="#help">?</a>
+
       <div class="icon">🧹</div>
       <div class="title">GreenCleaner</div>
-      <div class="vi">Dọn file tạm, tối ưu máy</div>
-      <div class="en">Clean temp files, boost performance</div>
-      <a class="btn" href="#">Download</a>
+
+      <div class="vi">
+        • Dọn file tạm và cache hệ thống<br>
+        • Giải phóng dung lượng ổ đĩa<br>
+        • Tối ưu hiệu suất máy tính
+      </div>
+
+      <div class="en">
+        • Remove temporary files and cache<br>
+        • Free up disk space<br>
+        • Improve system performance
+      </div>
+
+      <a class="btn" href="https://github.com/hieunguyen1976109-bit/green-app/releases/download/v1.0.0/GreenCleaner.exe">Download</a>
     </div>
 
+    <!-- NOTE REMINDER R -->
     <div class="card">
       <a class="help-btn" href="#help">?</a>
-      <div class="icon">🔔</div>
+
+      <div class="icon">🔔 + 📝</div>
       <div class="title">NoteReminder(R)</div>
-      <div class="vi">Nhắc việc có âm thanh</div>
-      <div class="en">Sound reminder system</div>
-      <a class="btn" href="#">Download</a>
+
+      <div class="vi">
+        • Ghi chú và nhắc việc theo thời gian có âm thanh<br>
+        • Thiết lập nhiều mốc nhắc theo giờ (HH:MM)<br>
+        • Hiển thị bong bóng khi đến thời điểm
+      </div>
+
+      <div class="en">
+        • Notes with sound-based reminders<br>
+        • Multiple scheduled times (HH:MM)<br>
+        • Bubble notification on trigger
+      </div>
+
+      <a class="btn" href="https://github.com/hieunguyen1976109-bit/green-app/releases/download/v1.0.0/Note.Reminder.exe">Download</a>
     </div>
 
+    <!-- NOTE REMINDER -->
     <div class="card">
       <a class="help-btn" href="#help">?</a>
+
       <div class="icon">📝</div>
       <div class="title">Note Reminder</div>
-      <div class="vi">Ghi chú đơn giản</div>
-      <div class="en">Simple notes</div>
-      <a class="btn" href="#">Download</a>
+
+      <div class="vi">
+        • Ghi chú và nhắc việc đơn giản không âm thanh<br>
+        • Lưu nhắc việc theo thời gian cơ bản<br>
+        • Hiển thị bong bóng trực quan
+      </div>
+
+      <div class="en">
+        • Simple reminders without sound<br>
+        • Basic time scheduling<br>
+        • Visual bubble notifications
+      </div>
+
+      <a class="btn" href="https://github.com/hieunguyen1976109-bit/green-app/releases/download/v1.0.0/NoteReminder.R.exe">Download</a>
     </div>
 
+    <!-- WINCLOCK -->
     <div class="card">
       <a class="help-btn" href="#help">?</a>
+
       <div class="icon">🕒</div>
       <div class="title">WinCLOCK</div>
-      <div class="vi">Đồng hồ desktop</div>
-      <div class="en">Desktop clock tool</div>
-      <a class="btn" href="#">Download</a>
+
+      <div class="vi">
+        • Đồng hồ mini cho Windows với giao diện hiện đại<br>
+        • Hiển thị giờ, phút, giây và lịch theo thời gian thực<br>
+        • Hỗ trợ nền trong suốt và hiển thị nổi trên desktop
+      </div>
+
+      <div class="en">
+        • Modern mini clock for Windows<br>
+        • Real-time clock and calendar display<br>
+        • Transparent background with desktop overlay support
+      </div>
+
+      <a class="btn" href="https://github.com/hieunguyen1976109-bit/green-app/releases/download/v1.0.0/WinCLOCK.exe">Download</a>
     </div>
 
   </div>
 
-  <!-- HELP SECTION -->
+  <!-- ================= HELP SECTION ================= -->
   <div id="help" style="margin-top:60px;padding:20px;background:#fff;border-radius:12px;border:1px solid #ddd;">
     <h2>HELP / HƯỚNG DẪN</h2>
-    <p><b>GreenCleaner:</b> Dọn rác hệ thống, tăng tốc máy.</p>
+
+    <p><b>GreenCleaner:</b> Dọn rác hệ thống và tăng tốc máy.</p>
     <p><b>NoteReminder(R):</b> Nhắc việc có âm thanh và popup.</p>
     <p><b>Note Reminder:</b> Ghi chú đơn giản không âm thanh.</p>
-    <p><b>WinCLOCK:</b> Đồng hồ mini hiển thị desktop.</p>
-    <p>👉 Nhấn "?" ở từng app để xem hướng dẫn nhanh.</p>
+    <p><b>WinCLOCK:</b> Đồng hồ desktop thời gian thực.</p>
+
+    <p>👉 Nhấn nút "?" ở từng ứng dụng để xem hướng dẫn nhanh.</p>
   </div>
 
 </div>
